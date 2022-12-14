@@ -1,6 +1,6 @@
 #include "Map.h"
 
-/// <summary>
+/// <summry>
 /// Sets the needed variables
 /// </summary>
 void Setup();
