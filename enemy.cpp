@@ -24,6 +24,20 @@ void Enemy::Logic(Map* pacman_map)
        position_new.Y--;
        break;
     }
+    
+    if (position_x_new < 0)
+    {
+        position_x_new = pacman_map->Width - 1;
+    }
+    postion_x_new %= pacman_map->Width;
+        
+    if (position_y_new < 0)
+    {
+        postion_y_new = pacman_map->Height - 1;
+    }
+    position_y_new %= pacman_map->Height;
+
+    
     if (pacman_map->GetTile(position_new.X, position_new.Y) != Map::MAP_WALL) {
     position = position_new
     

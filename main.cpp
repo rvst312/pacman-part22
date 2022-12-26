@@ -1,4 +1,5 @@
 #include "enemy.h"
+#include <vector>
 
 
 /// <summary>
@@ -20,7 +21,7 @@ void Draw();
 
 enum USER_INPUTS { NONE, UP, DOWN, RIGHT, LEFT, QUIT };
 Map pacman_map = Map();
-Enemy enemigo1 = Enemy(pacman_map.spawn_enemy);
+std::vector<Enemy> enemigos = std::vector<Enemy>();
 char player_char = 'O';
 int player_x = 1;
 int player_y = 1;
@@ -86,7 +87,7 @@ void Logic()
     }
     else
     {
-        enemigo1.Logic(&pacman_map);
+        enemigo1.Logic(pacman_map);
         int player_y_new = player_y;
         int player_x_new = player_x;
         switch (input)
